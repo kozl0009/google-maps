@@ -12,7 +12,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script>
 var map;
-var brooklyn = new google.maps.LatLng(40.6743890, -73.9455);
+var brooklyn = new google.maps.LatLng(43.644082, -79.386625);
 
 var MY_MAPTYPE_ID = 'custom_style';
 
@@ -42,7 +42,7 @@ function initialize() {
   ];
 
   var mapOptions = {
-    zoom: 12,
+    zoom: 14,
     center: brooklyn,
     mapTypeControlOptions: {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
@@ -52,10 +52,7 @@ function initialize() {
 
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-
-  var styledMapOptions = {
-    name: 'Custom Style'
-  };
+  
 
   var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
 
