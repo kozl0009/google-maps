@@ -24,14 +24,22 @@ var myLatlng = new google.maps.LatLng(45.349084, -75.757795);
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 	  
-  var marker = new google.maps.Marker({
-    position: myLatlng,
-    map: map,
-    title:"Hello World!"
-});
-var infowindow = new google.maps.InfoWindow({
-  content:"Hello World!"
-  });
+  var contentString =
+          '<h1>Title Message, Hello :)</h1>';
+
+      var infowindow = new google.maps.InfoWindow({
+          content: contentString,
+          // maxWidth: 200   ----We can also set a maxWidth
+      });
+
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'My Message'
+      });
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map,marker);
+      });
 
 infowindow.open(map,marker);
 }
